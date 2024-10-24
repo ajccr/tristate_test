@@ -1,0 +1,64 @@
+(DELAYFILE
+ (SDFVERSION "3.0")
+ (DESIGN "tristate_test")
+ (DATE "Thu Oct 24 18:27:22 2024")
+ (VENDOR "Parallax")
+ (PROGRAM "STA")
+ (VERSION "2.5.0")
+ (DIVIDER .)
+ (VOLTAGE 1.600::1.600)
+ (PROCESS "1.000::1.000")
+ (TEMPERATURE 100.000::100.000)
+ (TIMESCALE 1ns)
+ (CELL
+  (CELLTYPE "tristate_test")
+  (INSTANCE)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT en input1.A (0.028:0.028:0.028) (0.016:0.016:0.016))
+    (INTERCONNECT in input2.A (0.028:0.028:0.028) (0.016:0.016:0.016))
+    (INTERCONNECT _1_.Y _2_.TE_B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _2_.Z out (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input1.X _1_.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT input2.X _2_.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__inv_2")
+  (INSTANCE _1_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.118:0.118:0.118) (0.100:0.100:0.100))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__ebufn_8")
+  (INSTANCE _2_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.399:0.399:0.399) (0.340:0.340:0.340))
+    (IOPATH TE_B Z (0.309:0.309:0.309) (0.327:0.327:0.327))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__clkbuf_1")
+  (INSTANCE input1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.177:0.177:0.177) (0.163:0.163:0.163))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__clkbuf_1")
+  (INSTANCE input2)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.170:0.170:0.170) (0.158:0.158:0.158))
+   )
+  )
+ )
+)

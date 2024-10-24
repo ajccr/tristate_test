@@ -1,0 +1,17 @@
+61. Printing statistics.
+
+=== tristate_test ===
+
+   Number of wires:                  4
+   Number of wire bits:              4
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     sky130_fd_sc_hd__ebufn_2        1
+     sky130_fd_sc_hd__inv_2          1
+
+   Chip area for module '\tristate_test': 15.014400
+

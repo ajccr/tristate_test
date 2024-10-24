@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /local/proj/swanson/revA0/digital/tristate_test/runs/RUN_2024-10-24_18-27-05/41-openroad-detailedrouting/or_metrics_out.json /nix/store/ly8g3mcmscy67krhznzmkhbdvmqi6y4d-python3-3.11.9-env/lib/python3.11/site-packages/openlane/scripts/openroad/drt.tcl

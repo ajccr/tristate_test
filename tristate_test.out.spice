@@ -1,0 +1,54 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+* NGSPICE file created from tristate_test.ext - technology: sky130A
+* Black-box entry subcircuit for sky130_ef_sc_hd__decap_12 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__fill_2 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_3 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_4 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__tapvpwrvgnd_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_6 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__fill_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_8 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__ebufn_8 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__inv_2 abstract view
+.subckt tristate_test a_VGND a_VPWR a_en a_in a_out
+Ainput1 [en] net1 d_lut_sky130_fd_sc_hd__clkbuf_1
+Ainput2 [in] net2 d_lut_sky130_fd_sc_hd__clkbuf_1
+A_2_ [net2 _0_] out d_lut_sky130_fd_sc_hd__ebufn_8
+A_1_ [net1] _0_ d_lut_sky130_fd_sc_hd__inv_2
+
+.model todig_1v8 adc_bridge(in_high=1.2 in_low=0.6 rise_delay=10n fall_delay=10n)
+.model toana_1v8 dac_bridge(out_high=1.8 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=1n fall_delay=1n)
+.model dlatch d_dlatch(ic=0 rise_delay=1n fall_delay=1n)
+.model dzero d_pulldown(load=1p)
+.model done d_pullup(load=1p)
+
+AA2D1 [a_VGND] [VGND] todig_1v8
+AA2D2 [a_VPWR] [VPWR] todig_1v8
+AA2D3 [a_en] [en] todig_1v8
+AA2D4 [a_in] [in] todig_1v8
+AD2A1 [out] [a_out] toana_1v8
+
+.ends
+
+
+* sky130_ef_sc_hd__decap_12 (no function)
+* sky130_fd_sc_hd__fill_2 (no function)
+* sky130_fd_sc_hd__decap_3 (no function)
+* sky130_fd_sc_hd__decap_4 (no function)
+* sky130_fd_sc_hd__tapvpwrvgnd_1 (no function)
+* sky130_fd_sc_hd__decap_6 (no function)
+* sky130_fd_sc_hd__fill_1 (no function)
+* sky130_fd_sc_hd__decap_8 (no function)
+* sky130_fd_sc_hd__clkbuf_1 (A)
+.model d_lut_sky130_fd_sc_hd__clkbuf_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "01")
+* sky130_fd_sc_hd__ebufn_8 (A)
+.model d_lut_sky130_fd_sc_hd__ebufn_8 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "0Z0Z")
+* sky130_fd_sc_hd__inv_2 (!A)
+.model d_lut_sky130_fd_sc_hd__inv_2 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "10")
+.end

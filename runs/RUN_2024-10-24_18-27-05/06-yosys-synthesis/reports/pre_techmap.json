@@ -1,0 +1,33 @@
+{
+   "creator": "Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)",
+   "invocation": "stat -json -liberty /local/proj/swanson/revA0/digital/tristate_test/runs/RUN_2024-10-24_18-27-05/tmp/009141d164d9459f97c9b054d14add99.lib ",
+   "modules": {
+      "\\tristate_test": {
+         "num_wires":         3,
+         "num_wire_bits":     3,
+         "num_pub_wires":     3,
+         "num_pub_wire_bits": 3,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1,
+         "num_cells_by_type": {
+            "$_TBUF_": 1
+         }
+      }
+   },
+      "design": {
+         "num_wires":         3,
+         "num_wire_bits":     3,
+         "num_pub_wires":     3,
+         "num_pub_wire_bits": 3,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1,
+         "num_cells_by_type": {
+            "$_TBUF_": 1
+         }
+      }
+}
+

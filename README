@@ -1,0 +1,17 @@
+Base verilog test code:
+tristate_test.v
+
+Openlane output (step 63 Magic extraction):
+tristate_test.spice
+
+Generate xspice netlist using current spi2xspice.py:
+python3 spi2xspice.py sky130_fd_sc_hd__tt_025C_1v80.lib tristate_test.spice tristate_test.out.spice
+
+Generate xspice netlist using patched spi2xspice.py:
+python3 spi2xspice_patched.py sky130_fd_sc_hd__tt_025C_1v80.lib tristate_test.spice tristate_test_patched.out.spice
+
+Ngspice testbench for current spi2xspice.py:
+ngspice tb.spice
+
+Ngspice testbench for patched spi2xspice.py:
+ngspice tb_patched.spice

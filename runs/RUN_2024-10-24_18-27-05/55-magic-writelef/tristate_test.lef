@@ -1,0 +1,91 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO tristate_test
+  CLASS BLOCK ;
+  FOREIGN tristate_test ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 100.000 BY 100.000 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 38.060 32.400 40.060 68.240 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 68.060 32.400 70.060 68.240 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 30.120 40.340 70.160 42.340 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 34.360 32.400 36.360 68.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 64.360 32.400 66.360 68.640 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 30.120 36.640 70.160 38.640 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 30.120 66.640 70.160 68.640 ;
+    END
+  END VPWR
+  PIN en
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 47.640 4.000 48.240 ;
+    END
+  END en
+  PIN in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 51.040 4.000 51.640 ;
+    END
+  END in
+  PIN out
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.782000 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 51.040 100.000 51.640 ;
+    END
+  END out
+  OBS
+      LAYER nwell ;
+        RECT 30.170 32.555 70.110 68.190 ;
+      LAYER li1 ;
+        RECT 30.360 32.555 69.920 68.085 ;
+      LAYER met1 ;
+        RECT 23.990 32.400 76.290 68.240 ;
+      LAYER met2 ;
+        RECT 24.010 32.455 76.270 68.185 ;
+      LAYER met3 ;
+        RECT 4.000 52.040 96.000 68.165 ;
+        RECT 4.400 50.640 95.600 52.040 ;
+        RECT 4.000 48.640 96.000 50.640 ;
+        RECT 4.400 47.240 96.000 48.640 ;
+        RECT 4.000 32.475 96.000 47.240 ;
+  END
+END tristate_test
+END LIBRARY
+

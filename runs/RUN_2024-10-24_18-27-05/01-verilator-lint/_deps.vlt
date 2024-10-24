@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/local/proj/swanson/revA0/digital/tristate_test/runs/RUN_2024-10-24_18-27-05/tmp/0cf1b9282030418fa45f5674567454a3.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/local/proj/swanson/revA0/digital/tristate_test/runs/RUN_2024-10-24_18-27-05/tmp/0cf1b9282030418fa45f5674567454a3.bb.v"

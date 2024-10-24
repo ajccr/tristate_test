@@ -1,0 +1,82 @@
+library (tristate_test) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1A";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : -40.0;
+  nom_voltage                    : 1.95;
+
+  lu_table_template(template_1) {
+    variable_1 : total_output_net_capacitance;
+    index_1 ("0.01028,  0.01137,  0.01481,  0.02574,  0.06038,  0.17028,  0.51882");
+  }
+
+  cell ("tristate_test") {
+    interface_timing : true;
+    pin("en") {
+      direction : input;
+      capacitance : 0.0055;
+    }
+    pin("in") {
+      direction : input;
+      capacitance : 0.0054;
+    }
+    pin("out") {
+      direction : output;
+      capacitance : 0.0157;
+      timing() {
+        related_pin : "en";
+        timing_type : combinational;
+	cell_rise(template_1) {
+          values("0.16774,0.17042,0.17867,0.20397,0.28010,0.50891,1.22369");
+	}
+	rise_transition(template_1) {
+          values("0.03094,0.03436,0.04450,0.07709,0.17895,0.49674,1.50308");
+	}
+	cell_fall(template_1) {
+          values("0.19392,0.19570,0.20089,0.21408,0.24469,0.32288,0.55985");
+	}
+	fall_transition(template_1) {
+          values("0.02087,0.02233,0.02640,0.03775,0.07082,0.17653,0.52173");
+	}
+      }
+      timing() {
+        related_pin : "in";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          values("0.15216,0.15484,0.16310,0.18839,0.26452,0.49334,1.20811");
+	}
+	rise_transition(template_1) {
+          values("0.03094,0.03436,0.04450,0.07709,0.17895,0.49674,1.50308");
+	}
+	cell_fall(template_1) {
+          values("0.14511,0.14688,0.15208,0.16527,0.19587,0.27406,0.51104");
+	}
+	fall_transition(template_1) {
+          values("0.02087,0.02233,0.02640,0.03775,0.07082,0.17653,0.52173");
+	}
+      }
+    }
+  }
+
+}

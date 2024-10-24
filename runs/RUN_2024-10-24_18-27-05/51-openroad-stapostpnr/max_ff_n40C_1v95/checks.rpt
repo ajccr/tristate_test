@@ -1,0 +1,75 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= max_ff_n40C_1v95 Corner ===================================
+
+Startpoint: en (input port clocked by __VIRTUAL_CLK__)
+Endpoint: out (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 ^ input external delay
+     1    0.005410    0.023072    0.014046    2.014046 ^ en (in)
+                                                         en (net)
+                      0.023075    0.000000    2.014046 ^ input1/A (sky130_fd_sc_hd__clkbuf_1)
+     1    0.005752    0.056778    0.067440    2.081486 ^ input1/X (sky130_fd_sc_hd__clkbuf_1)
+                                                         net1 (net)
+                      0.056782    0.000414    2.081901 ^ _1_/A (sky130_fd_sc_hd__inv_2)
+     1    0.010033    0.025676    0.028415    2.110316 v _1_/Y (sky130_fd_sc_hd__inv_2)
+                                                         _0_ (net)
+                      0.025712    0.000788    2.111104 v _2_/TE_B (sky130_fd_sc_hd__ebufn_8)
+     1    0.049378    0.148724    0.138465    2.249568 ^ _2_/Z (sky130_fd_sc_hd__ebufn_8)
+                                                         out (net)
+                      0.148823    0.003245    2.252813 ^ out (out)
+                                              2.252813   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -2.252813   data arrival time
+---------------------------------------------------------------------------------------------
+                                              5.497187   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= max_ff_n40C_1v95 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= max_ff_n40C_1v95 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
